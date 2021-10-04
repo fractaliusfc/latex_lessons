@@ -380,3 +380,197 @@ Esto es una lista numerada
 			Para obtener \textbackslash , escribe \lstinline!\textbackslash!
 			
 \end{frame}
+\section{Usando paquetes}
+	\subsection{Modificando el documento}
+		\begin{frame}[fragile]{Paquete Geometry}
+			Este paquete nos permitirá modificar la geometría (tamaño y márgenes) de nuestro documento
+			\begin{lstlisting}[basicstyle=\footnotesize]
+\documentclass{article}
+\usepackage{geometry}
+\geometry{letterpaper,top=2cm,left=2cm,right=2cm,bottom=2cm}
+\author{Carlos Espinosa}
+\title{Primer Documento}
+\date{\today}
+\begin{document}
+\maketitle
+% texto
+\end{document}
+			\end{lstlisting}			
+\end{frame}
+		\begin{frame}[fragile]{Paquete inputenc}
+			Este paquete nos permitirá modificar la codificación del texto.
+			\begin{lstlisting}[basicstyle=\footnotesize]
+\documentclass{article}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\geometry{letterpaper,top=2cm,left=2cm,right=2cm,bottom=2cm}
+\author{Carlos Espinosa}
+\title{Primer Documento}
+\date{\today}
+\begin{document}
+\maketitle
+% texto
+\end{document}
+			\end{lstlisting}			
+\end{frame}
+		\begin{frame}[fragile]{Paquete babel}
+			Este se ocupará de lidiar con las particularidades propias de nuestro idioma, como la subdivisión de sílabas, nombres en español,etc.
+			\begin{lstlisting}[basicstyle=\footnotesize]
+\documentclass{article}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\geometry{letterpaper,top=2cm,left=2cm,right=2cm,bottom=2cm}
+\author{Carlos Espinosa}
+\title{Primer Documento}
+\date{\today}
+\begin{document}
+\maketitle
+% texto
+\end{document}
+			\end{lstlisting}			
+\end{frame}
+	\subsection{Agregando imágenes}
+		\begin{frame}[fragile]{Paquete graphicx}
+			Este paquete nos permite insertar imágenes al documento. Las im\'agenes deben de estar en la misma carpeta que el archivo \textit{.tex}. El formato de las im\'agenes debe de estar en \textit{PNG} o \textit{JPG}. \LaTeX{} admite otro tipo de im\'agenes para esto se deben de usar otras opciones.
+			\begin{lstlisting}[basicstyle=\tiny]
+\documentclass{article}
+\usepackage{graphicx}
+\author{Carlos Espinosa}
+\title{Primer Documento}
+\date{\today}
+\begin{document}
+\maketitle
+El universo es inmenso y parece ser homog\'eneo, a grandes escalas, a donde sea que observemos.
+\includegraphics[scale=0.5]{universe.jpg}
+Hay una imagen del universo arriba.
+\end{document}
+			\end{lstlisting}			
+\end{frame}
+		\begin{frame}[fragile]{Paquete graphicx. Cosas útiles}
+			A las im\'agenes se les puede poner t\'itulo, una etiqueta y referenciarlas bajo el entorno de \textbf{figure}
+			\begin{lstlisting}[basicstyle=\tiny]
+\documentclass{article}
+\usepackage{grpahicx}
+\author{Carlos Espinosa}
+\title{Primer Documento}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.25\textwidth]{universe.jpg}
+	\caption{Que bonito universo}
+	\label{fig:uni}
+\end{figure}
+En la figura \ref{fig:uni} podemos ver una imagen de una parte del universo. En la p\'agina \pageref{fig:uni} est\'a la misma figura.
+\end{document}
+			\end{lstlisting}		
+\end{frame}
+	\subsection{Escribiendo ecuaciones}
+		\begin{frame}[fragile]{Escribiendo ecuaciones}
+\LaTeX por si solo contiene herramientas para escribir matem\'aticas b\'asicas. Pero si se necesitan escribir f\'ormulas m\'as complicadas se recomienda usar el paquete \textbf{amsmath} o \textbf{mathtools}. (Este segundo carga amsmath)
+\begin{lstlisting}[
+    basicstyle=\small, %or \small or \footnotesize etc.
+]
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\end{lstlisting}
+Existen dos entornos en \LaTeX: el modo \textit{inline} y el modo \textit{display}. El modo \textit{inline} escribe la expresi\'on sobre la misma l\'inea de texto. El modo \textit{display} lo hace en una secci\'on diferente		
+\end{frame}
+		\begin{frame}[fragile]{Modos. Inline}
+			El modo inline se hace por medio de \$...\$
+			\begin{lstlisting}[basicstyle=\small]
+En la ecuaci\'on $\dfrac{1}{2}x^{2}+3y^{3/2}-1 = 0$ tenemos un comportamiento polinomial.
+			\end{lstlisting}
+			Otras formas de llamar al modo inline es con:
+			\begin{itemize}
+				\item \lstinline!\(...\)!
+				\item \lstinline!$...$!
+				\item \lstinline!\begin{math}...\end{math}!
+			\end{itemize}
+\end{frame}
+		\begin{frame}[fragile]{Modos. Display}
+			El modo display se accesa por medio de:
+			\begin{itemize}
+				\item $\mathbf{\rightarrow}$\lstinline!\[...\]! Sin n\'umero
+				\item \lstinline!$$...$$!
+				\item \lstinline!\begin{displaymath}...\end{displaymath}!
+				\item $\mathbf{\rightarrow}$\lstinline!\begin{equation}...\end{equation}!
+			\end{itemize}
+			Los resaltados en color verde son los que se usan con m\'as frecuencia. 
+\end{frame}
+\section{Cosas extras de \LaTeX}
+	\subsection{Nuevas l\'ineas y p\'arrafos}
+		\begin{frame}[fragile]{Nuevas l\'ineas y p\'arrafos}
+			Cuando uno esta escribiendo, es frecuente utilizar una nueva l\'inea. Basta con dejar en el texto, un espacio entre texto. Tambi\'en se pueden usar los comandos $\backslash$\textbf{newline} o con $\backslash \backslash$\\
+Hay otro comando similar que es $\backslash$par que es an\'alogo a dejar una l\'inea en blanco entre bloques de texto.
+\end{frame}
+	\subsection{Secciones y subsecciones}
+		\begin{frame}[fragile]{Secciones y subsecciones}
+			Podemos organizar nuestro texto por secciones y sub secciones (incluso un tercer nivel subsub secciones). Tambi\'en podemos crear cap\'itulo. Los comandos para las distintas secciones son:
+			\begin{itemize}
+				\item \textbackslash chapter{...} (Clase de documento \emph{book})
+				\item \textbackslash section{...}
+				\item \textbackslash subsection{...}
+				\item \textbackslash subsubsection{...}
+			\end{itemize}
+			Existe un comando que crear\'a de forma autom\'atica un \'indice bas\'ndose en todas las divisiones que hayamos hecho a lo largo del texto.
+\end{frame}
+	\subsection{Tablas}
+	\begin{frame}[fragile]{Creando tablas}
+	    La creaci\'on de tablas en \LaTeX\ es ``sencilla''. Para crear una tabla utilizaremos el entorno \textit{tabular}.
+	    \begin{lstlisting}[basicstyle=\small]
+\begin{center}
+\begin{tabular}{ c c c }	    
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\
+ cell7 & cell8 & cell9    
+\end{tabular}
+\end{center}
+	    \end{lstlisting}
+	\end{frame}
+		\begin{frame}[fragile]{A\~nadiendo bordes}
+			Si queremos a\~nadir bordes el comando se transforma en:
+			\begin{lstlisting}[basicstyle=\small]
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\ 
+ cell7 & cell8 & cell9 \\ 
+ \hline
+\end{tabular}
+\end{center}
+			\end{lstlisting}
+\end{frame}
+
+		\begin{frame}[fragile]{Títulos,referencias,etc.}
+			Al igual que con las imagenes, y realmente con cualquier objeto de \LaTeX, podemos agregarle un t\'itulo y una etiqueta para referenciar una tabla:
+			\begin{lstlisting}[basicstyle=\tiny]
+Tabla \ref{tabla:datos} es un ejemplo de como referencias elementos de \LaTeX.
+ 
+\begin{table}[h!]
+\centering
+\begin{tabular}{||c c c c||} 
+ \hline
+ Col1 & Col2 & Col2 & Col3 \\ 
+ \hline\hline
+ 1 & 6 & 87837 & 787 \\ 
+ 2 & 7 & 78 & 5415 \\
+ 3 & 545 & 778 & 7507 \\
+ 4 & 545 & 18744 & 7560 \\
+ 5 & 88 & 788 & 6344 \\
+ \hline
+\end{tabular}
+\caption{Tabla para probar t\'itulos y referencias}
+\label{table:datos}
+\end{table}
+			\end{lstlisting}
+\end{frame}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
