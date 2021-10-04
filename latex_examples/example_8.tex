@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+Esto es una texto de prueba. Esto es una ecuación en la misma linea $x=0$. Esto es otro texto de prueba. Esto es otra ecuación: $vel inicial = 5$.
+
+Símbolos especiales, i) exponente/superíndice: $x^{2}$, ii) subíndice: $x_{0}$, iii) raíz cuadrada: $\sqrt{x}$, iv) funciones: $\log(x)$, $\cos(x)$, $\tan(x)$, $\sin(x)$, $\exp(x)$, $e^{x}$, $\ln(x)$, $\log_{2}(x)$, $\sin^{2}(x)$,
+v) fracciones: $\frac{1}{2}$, $\dfrac{1}{2}$, $1/2$.
+
+El otro modo para escribir ecuaciones es el modo \emph{display}. Por ejemplo:
+
+\[x^2\]
+
+Ahora escribamos una integral definida, primero agreguemos el símbolo de la integral junto con la variable:
+
+\[\int x\]
+
+Agreguemos la diferencial:
+
+\[\int x dx\]
+
+Agreguemos los límites de integración:
+
+\[\int_{0}^{2} x dx\]
+
+Cambiemos los límites de integración
+
+\[\int_{x_{0}}^{x_{1}} x dx\]
+
+Cambiemos los límites de integración de nuevo:
+
+\[\int_{x_{2}}^{x_{3}} x dx\]
+
+Hagamos diferentes sumas pero ahora con ecuaciones numeradas:
+
+\begin{equation}
+    \sum \frac{1}{n}
+\end{equation}
+
+\begin{equation}
+    \sum \frac{1}{n^2}
+\end{equation}
+
+\begin{equation}
+    \sum \frac{n+1}{n^2}
+\end{equation}
+
+\begin{equation*}
+    \sum_{n=0}^{\infty} \frac{n+1}{n^2}
+\end{equation*}
+
+Escribamos unos cuantos límites:
+
+\begin{equation}
+\lim_{x \to 0} x^{2} = 0
+\end{equation}
+
+\begin{equation}
+\lim_{x^{-} \to 0} x^{2} = 0
+\end{equation}
+
+\begin{equation}
+\lim_{x^{+} \to 0} x^{2} = 0
+\end{equation}
+
+Escribamos la ecuación para obtener las soluciones de un polinomio de segundo grado:
+
+\begin{equation}
+    x = \dfrac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+\end{equation}
+
+Podemos poner palabras en modo matemático con el comando \emph{\textbackslash mathrm}:
+
+\begin{equation}
+    v_{\mathrm{ini}} = 0
+\end{equation}
+
+\begin{equation}
+    \mathrm{H}_{2}\mathrm{O}
+\end{equation}
+
+Igualmente podemos usar el modo \emph{inline} para solo poner los símbolos matemáticos que necesitemos: H$_{2}$O
+
+Escribamos otra integral usando letras griegas, primero pongamos el símbolo de integración:
+
+\begin{equation}
+    \int
+\end{equation}
+
+Ahora pongamos los límites de la integral:
+
+\begin{equation}
+    \int_{-\infty}^{\infty}
+\end{equation}
+
+Agreguemos el número $e$ de la función exponencial:
+
+\begin{equation}
+    \int_{-\infty}^{\infty}e
+\end{equation}
+
+Agreguemos el $e^{-x}$:
+
+\begin{equation}
+    \int_{-\infty}^{\infty}e^{-x}
+\end{equation}
+
+Agreguemos un exponente al $-x$:
+
+\begin{equation}
+    \int_{-\infty}^{\infty}e^{-x^{2}}
+\end{equation}
+
+Escribimos el diferencial:
+
+\begin{equation}
+    \int_{-\infty}^{\infty}e^{-x^{2}} dx
+\end{equation}
+
+Agreguemos en número $\pi$: 
+
+\begin{equation}
+    \int_{-\infty}^{\infty}e^{-x^{2}} dx = \pi
+\end{equation}
+
+Y por último agreguemos una raíz cuadrada:
+
+\begin{equation}
+    \int_{-\infty}^{\infty}e^{-x^{2}} dx = \sqrt{\pi}
+\end{equation}
+
+También podemos escribir otras letras griegas, minúsculas y mayúsculas: $\alpha$, $\delta$, $\Delta$, $\eta$, $\mu$, $\theta$, $\omega$, $\Omega$, $\psi$, $\Psi$, $\phi$, $\Phi$
+
+Y una buena cantidad de símbolos matemáticos:
+
+\begin{equation}
+    x \approx 1
+\end{equation}
+
+\begin{equation}
+    x \sim 1 \Re
+\end{equation}
+
+\begin{equation}
+    \vec{x} =(1,1,1)
+\end{equation}
+
+Esto es un texto y esto una ecuación inline: $x^{2}=0$
+y esto es una ecuación en modo display:
+\begin{equation}
+    x^{2}=0
+\end{equation}
+
+Esto es un texto y esto una ecuación inline: $\frac{n+1}{n^2}$
+y esto es una ecuación en modo display:
+\begin{equation}
+    \frac{n+1}{n^2}
+\end{equation}
+
+Esto es un texto y esto una ecuación inline: $\dfrac{n+1}{n^2}$
+y esto es una ecuación en modo display:
+\begin{equation}
+    \dfrac{n+1}{n^2}
+\end{equation}
+
+\end{document}
